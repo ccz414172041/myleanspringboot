@@ -6,7 +6,7 @@
 		<groupId>com.caihyspace</groupId>
 		<artifactId>myleanspringboot</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
+
 	</parent>
 	<groupId>com.ccz</groupId>
 	<artifactId>redisdemo</artifactId>

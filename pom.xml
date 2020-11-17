@@ -10,12 +10,13 @@
         <module>rabbitmq_demo</module>
         <module>shiro-project</module>
         <module>mail-demo</module>
+        <module>canal_demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.1.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.3.5.RELEASE</version>
+
     </parent>
     <groupId>com.caihyspace</groupId>
     <artifactId>myleanspringboot</artifactId>
@@ -76,16 +77,12 @@
             <version>1.16.10</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.58</version>
+        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 
 </project>
