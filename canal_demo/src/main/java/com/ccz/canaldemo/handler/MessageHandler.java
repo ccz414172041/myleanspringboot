@@ -13,6 +13,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -52,6 +53,7 @@ public class MessageHandler {
                 // 进行格式转换的数据
                 Map<String, String> params = dataConvertFactory.transferData(dataList.get(0), table);
                 String type = (String) map.get(BinlogConstants.BINLOG_TYPE_KEY);
+                ArrayList<Object> list = new ArrayList<>();
                 esRestClient.buildClient(hostAndPort);
                 switch (type) {
                     case BinlogConstants.INSERT_EVENT:

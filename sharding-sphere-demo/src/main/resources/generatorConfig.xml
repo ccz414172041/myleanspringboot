@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <properties resource="generator.properties"></properties>
+    <!-- 数据库驱动-->
+    <classPathEntry  location="${mapping.localJar}"/>
+    <context id="generator"  targetRuntime="MyBatis3">
+        <!--<commentGenerator>
+            <property name="suppressDate" value="true"/>
+            去除自动生成的注释
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>-->
+        <commentGenerator type="com.meetyou.price.config.GeneratorConfig"></commentGenerator>
+        <!--数据库链接URL，用户名、密码 -->
+        <jdbcConnection driverClass="${mapping.driverClass}" connectionURL="${mapping.url}" userId="${mapping.user}" password="${mapping.pwd}">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.meetyou.price.model.entity" targetProject="src\main\java">
+            <property name="constructorBased" value="false"/>
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="./src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.meetyou.price.model.dao" targetProject="src\main\java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <!-- Mysql 映射-->
+        <table schema="ds0" tableName="user_0" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="price" tableName="price_category" domainObjectName="PriceCategory" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="price" tableName="price_resume" domainObjectName="PriceResume" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+<!--        <table schema="price" tableName="tour_price" domainObjectName="TourPrice" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+
+    </context>
+</generatorConfiguration>

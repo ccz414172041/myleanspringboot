@@ -15,7 +15,7 @@ public class ResultGenerator {
         return new Result().setCode(ResultCodeEnum.SUCCESS).setMessage(DEFAULT_SUCCESS_MESSAGE);
     }
 
-    public static <T> Result<T> genSuccessResult(T data) {
+    public static <T> Result genSuccessResult(T data) {
         return new Result()
                 .setCode(ResultCodeEnum.SUCCESS)
                 .setMessage(DEFAULT_SUCCESS_MESSAGE)

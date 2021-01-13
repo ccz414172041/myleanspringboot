@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.caihyspace.sharding.shardingspheredemo.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.caihyspace.sharding.shardingspheredemo.entity.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, age
+  </sql>
+  <insert id="save" parameterType="com.caihyspace.sharding.shardingspheredemo.entity.User" >
+    insert into user (id, name, age) values (#{id},#{name},#{age})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user order by id asc
+  </select>
+
+</mapper>
