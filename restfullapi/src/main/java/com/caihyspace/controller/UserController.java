@@ -1,8 +1,11 @@
 package com.caihyspace.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.caihyspace.entity.User;
 import com.caihyspace.exception.CustomException;
+import com.caihyspace.statictest.FilterChainScope;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -13,6 +16,19 @@ import java.util.*;
 public class UserController {
 
     static Map<Integer, User> users = Collections.synchronizedMap(new HashMap<Integer, User>());
+
+    @Autowired
+    FilterChainScope filterChainScope;
+
+    @GetMapping("/testScope")
+    public String testScope() {
+//        log.info(JSONObject.toJSONString(FilterChainScope.map));
+        filterChainScope.doFilter("1", "2", "B", filterChainScope);
+        filterChainScope.doFilter("1", "2", "A", filterChainScope);
+        filterChainScope.doFilter("1", "2", "B", filterChainScope);
+        filterChainScope.doFilter("1", "2", "A", filterChainScope);
+        return null;
+    }
 
     @RequestMapping("/hello")
     public String hello() throws Exception {
