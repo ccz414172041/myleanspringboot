@@ -1,2 +1,6 @@
 spring:
   port:8080
+nobody:
+  json:
+    suffixName: su
+    prefixName: pre

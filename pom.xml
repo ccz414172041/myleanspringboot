@@ -12,6 +12,7 @@
         <module>mail-demo</module>
         <module>canal_demo</module>
         <module>sharding-sphere-demo</module>
+        <module>json-spring-boot-starter</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

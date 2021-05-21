@@ -1,13 +1,14 @@
 package com.caihyspace.entity;
 
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 /**
  *  user实体类
  */
-@JacksonXmlRootElement
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     private int id;
 
